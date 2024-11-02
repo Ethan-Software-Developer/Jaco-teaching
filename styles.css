@@ -1,0 +1,103 @@
+* {
+  margin: 0; /* This tells everything not to have extra space around it */
+  padding: 0; /* This tells everything not to have extra space inside it */
+  box-sizing: border-box; /* This helps us count spaces correctly */
+}
+
+body {
+  font-family: Arial, sans-serif; /* This sets the letters to look nice */
+  overflow: hidden; /* This stops the scroll bars from showing up */
+}
+
+.background {
+  position: fixed; /* This keeps the background in one place on the screen */
+  top: 0; /* This puts the background at the top */
+  left: 0; /* This puts the background on the left */
+  width: 100%; /* This makes the background as wide as the screen */
+  height: 100%; /* This makes the background as tall as the screen */
+  background-image: url('./illustration-anime-city.jpg'); /* This adds our pretty picture */
+  background-size: cover; /* This makes sure the picture covers everything */
+  background-position: center; /* This puts the picture in the middle */
+  background-repeat: no-repeat; /* This stops the picture from repeating */
+  z-index: -1; /* This sends the background behind everything else */
+}
+
+.navbar {
+  display: flex; /* This arranges the menu items in a line */
+  justify-content: space-between; /* This spreads them out so there’s space in between */
+  align-items: center; /* This makes everything stand up tall in the middle */
+  padding: 1rem 2rem; /* This gives the menu some cozy space around it */
+  color: white; /* This makes the words white */
+  position: relative; /* This allows other things to go on top of it */
+  z-index: 1; /* This brings the menu in front of the background */
+}
+
+/* Oh no! The links are mixed up and need fixing! */
+.nav-links {
+  list-style: none; /* This takes away the bullet points from the list */
+  display: flex; /* This should line the links up nicely, but it’s not working right! */
+  transition: opacity 0.3s ease-in-out; /* This makes the links fade in and out smoothly */
+  position: absolute; /* This is where it went wrong! They shouldn't be absolute! */
+  top: 50px; /* This puts them too far down, we need to fix it */
+  right: 0; /* This should align them to the right properly */
+}
+
+.nav-links li {
+  margin: 0 1rem; /* This gives space between each link */
+}
+
+.nav-links a {
+  color: white; /* This makes the link words white */
+  text-decoration: none; /* This takes away the underline from the links */
+  transition: color 0.3s; /* This makes the link color change smoothly */
+}
+
+/* Let's remove this hover effect for now */
+.nav-links a:hover {
+  color: #ddd; /* This changes the color when you hover over the link */
+}
+
+.menu-icon {
+  display: flex; /* This shows the menu icon */
+  flex-direction: column; /* This stacks the lines of the icon on top of each other */
+  cursor: pointer; /* This changes the mouse to a pointer when you hover */
+  margin-left: 1rem; /* This gives space between the links and the menu icon */
+}
+
+.bar {
+  height: 3px; /* This sets the height of each line in the icon */
+  width: 25px; /* This sets how wide each line is */
+  background-color: white; /* This makes the lines white */
+  margin: 4px 0; /* This gives space between the lines */
+}
+
+/* Now we are going to change how the menu looks on small screens, but it’s broken! */
+@media (max-width: 768px) {
+  .nav-links {
+      position: absolute; /* This is wrong! They should not be absolute */
+      top: 60px; /* This is too far down, we need to fix it */
+      left: 0; /* This should be aligned properly */
+      right: 0; /* This needs to be fixed too! */
+      background-color: rgba(0, 123, 255, 0.8); /* This is the background color for the menu */
+      flex-direction: column; /* This stacks the links, but we need to check how it looks */
+      display: none; /* This hides the links at first, but they need to show up later! */
+      opacity: 0; /* This means we can’t see them yet */
+      transition: opacity 0.3s ease-in-out; /* This makes them fade in and out */
+  }
+
+  /* The class to show the links is missing! */
+  .nav-links.open {
+      display: flex; /* When we open the menu, this should show the links */
+      opacity: 1; /* This makes the links visible */
+  }
+
+  .nav-links li {
+      margin: 1rem 0; /* This spaces the links out vertically */
+  }
+
+  /* Oh no! This makes the menu stack the links vertically on all screens! */
+  .navbar {
+      flex-direction: column; /* This is wrong! We need to fix this for big screens */
+      align-items: flex-start; /* This makes the items align to the start, which we don’t want for larger screens */
+  }
+}

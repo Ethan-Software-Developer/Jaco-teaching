@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEOrJ6pM4hJCFkUv0NGXJyIfG8s5Hh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMMCb4hYMyk9E6Z4Tv1UeRf+8ABcCm7LI9jYua3"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Navbar</title>
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar">
+        <!-- Oops! This is our top menu, but it’s broken. We need to fix it! -->
+        <div class="logo">Logo</div> <!-- This is the logo part. It’s fine! -->
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div> <!-- This is one of the lines for the menu icon -->
+            <div class="bar"></div> <!-- This is the second line for the menu icon -->
+            <div class="bar"></div> <!-- This is the third line for the menu icon -->
+        </div>
+        <!-- Uh-oh! These are our menu links, but they need some help! -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li> <!-- This link says 'Home' -->
+            <li><a href="#about">About</a></li> <!-- This link says 'About' -->
+            <li><a href="#services">Services</a></li> <!-- This link says 'Services' -->
+            <li><a href="#contact">Contact</a></li> <!-- This link says 'Contact' -->
+        </ul>
+        <!-- Important: The order of things is mixed up, and that makes it look funny! -->
+    </nav>
 
-    <link rel="stylesheet" href="./index.css" />
-    <title>Change</title>
-  </head>
-  <body>
-    <div class="">yhello</div>
-    <script src="./index.js"></script>
-  </body>
+    <script>
+        // This is the magic part that makes the menu open and close when we click!
+        const menuIcon = document.getElementById('menu-icon'); // We find our menu icon
+        const navLinks = document.getElementById('nav-links'); // We find our links
+
+        // When we click the menu icon, we want to show or hide the links
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('open'); // This makes the links appear or disappear
+        });
+    </script>
+</body>
 </html>
