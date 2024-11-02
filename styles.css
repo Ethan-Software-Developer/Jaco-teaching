@@ -42,6 +42,9 @@ body {
   right: 0; /* This should align them to the right properly */
 }
 
+/* Step to fix: Change 'absolute' to 'flex' and set proper top positioning */
+/* Fix it by using display: flex; and top: 0; to place the links correctly. */
+
 .nav-links li {
   margin: 0 1rem; /* This gives space between each link */
 }
@@ -62,6 +65,11 @@ body {
   flex-direction: column; /* This stacks the lines of the icon on top of each other */
   cursor: pointer; /* This changes the mouse to a pointer when you hover */
   margin-left: 1rem; /* This gives space between the links and the menu icon */
+}
+
+/* Step to fix: Add some padding for better spacing around the icon */
+.menu-icon {
+  padding: 10px; /* Add this line to give space around the icon */
 }
 
 .bar {
@@ -100,4 +108,7 @@ body {
       flex-direction: column; /* This is wrong! We need to fix this for big screens */
       align-items: flex-start; /* This makes the items align to the start, which we don’t want for larger screens */
   }
+
+  /* Step to fix: Set flex-direction to row for larger screens */
+  /* Change the flex-direction back to row by adding 'flex-direction: row;' inside .navbar */
 }
